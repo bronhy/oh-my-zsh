@@ -18,3 +18,10 @@ function k8s_alertmanager {
   sleep 2s
   open http://localhost:9062
 }
+
+# rabbit mq
+function k8s_mq {
+  kubectl -n c2-production port-forward service/c2-rabbitmq-production 15672:15672 &
+  sleep 2s
+  open http://localhost:15672
+}
