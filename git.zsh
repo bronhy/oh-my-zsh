@@ -1,1 +1,7 @@
+alias gc="git checkout $1"
+alias gcb="git checkout -b $1"
+alias gm="git commit"
+alias gma="git commit --ammend"
+alias gp="git push"
+alias gpf="git push --force"
 alias gl="git log --all --graph --date=local --pretty=format:'%C(yellow)%h%Cred%d %s %Creset[%C(cyan)%an%Creset]%  %ar %Cgreen%ad'"
