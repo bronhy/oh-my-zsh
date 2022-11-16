@@ -1,4 +1,4 @@
 # open project in dir
-phpstorm() {
+idea() {
     eval "open -a PhpStorm $1"
 }
