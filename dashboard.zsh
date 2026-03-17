@@ -25,3 +25,18 @@ function k8s_mq {
   sleep 2s
   open http://localhost:15672
 }
+
+# traefik
+function k8s_traefik {
+  case "$1" in
+    public) ns="ingress" ;;
+    internal) ns="ingress-internal" ;;
+    *) echo "Usage: k8s_traefik {public|internal} [local-port]"; return 1 ;;
+  esac
+
+  local port="${2:-8080}"
+
+  kubectl --context prd-azgwc-aks-001 -n "$ns" port-forward svc/traefik-api "$port:8080"
+  sleep 2s
+  open "http://localhost:$port/dashboard/"
+}
