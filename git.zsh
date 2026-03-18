@@ -1,4 +1,3 @@
-alias gc="git checkout $1"
 alias gcb="git checkout -b $1"
 alias ga="git add ."
 alias gaf="git add $1"
